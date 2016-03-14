@@ -6,9 +6,15 @@
 #' @export
 get_comparisons = function(names){
   comparisons=NULL
-  conditions = matrix(nrow=length(names),ncol = length(strsplit(names[1],"_")[[1]]))
+  x <- strsplit(as.character(names[i]),"_")[[1]]
+  for(i in 1:length(x)){
+    if(!is.na(as.numeric(x[i]))){
+      l <- i-1
+    } 
+  }
+  conditions = matrix(nrow=length(names),ncol = l)
   for (i in 1:length(names)){
-    conditions[i,] = strsplit(names[i],"_")[[1]]
+    conditions[i,] = strsplit(names[i],"_")[[1]][1:l]
   }
   for (j in 1:ncol(conditions)){
     tmp=unique(conditions[,j])

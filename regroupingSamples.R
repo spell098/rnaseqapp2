@@ -18,7 +18,7 @@
 #' namesTable <- comparisonsTable
 #' names2 <- namesSelectedComparisons(namesTable)
 #' @export
-regroupingSamples <- function(fileContent,groupBy,expr.matrix,selectedVariables, noCluster=NULL,names1,comparisonsTable=NULL,exprset=NULL){
+regroupingSamples <- function(fileContent,groupBy,expr.matrix,selectedVariables, noCluster=3,names1,comparisonsTable=NULL,exprset=NULL){
   library(wesanderson)
   names2 <- NULL
   if (groupBy == "fuzzy"){
